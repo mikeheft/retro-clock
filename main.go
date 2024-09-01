@@ -120,8 +120,12 @@ func main() {
 
 		for line := range clock[0] {
 			// Print a line for each placeholder in digits
-			for digit := range clock {
-				fmt.Print(clock[digit][line], "  ")
+			for index, digit := range clock {
+				next := clock[index][line]
+				if digit == colon && sec%2 == 0 {
+					next = "   "
+				}
+				fmt.Print(next, "  ")
 			}
 			fmt.Println()
 		}
