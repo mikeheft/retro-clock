@@ -121,7 +121,7 @@ func main() {
 		for line := range clock[0] {
 			// Print a line for each placeholder in digits
 			for digit := range clock {
-				fmt.Print(digits[digit][line], "  ")
+				fmt.Print(clock[digit][line], "  ")
 			}
 			fmt.Println()
 		}
